@@ -2,5 +2,7 @@
   "name": "consultorio",
   "app_id": "f9e26271",
   "type": "ionic-angular",
-  "integrations": {}
+  "integrations": {
+    "cordova": {}
+  }
 }

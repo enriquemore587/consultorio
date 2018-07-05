@@ -1,0 +1,32 @@
+page-login {
+    
+    
+        .container{
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 40px;
+
+        }
+        .imgConsultorio{
+            margin-top: 10px;
+            height: 170px;
+            text-align: center;
+            color : color($colors, primary);
+        }
+        
+        .input-cover{
+            // border: 1px solid #bdbdbd !important;
+        }
+        .button-block{
+            margin-top: 0px;
+            height: 60px;
+            background-color: #c7def6;
+            color: #2196f3;
+            border: .3px solid #2196f3;
+        }
+        
+    }
+    
