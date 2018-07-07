@@ -1,19 +1,32 @@
 <ion-content padding>
   <ion-list no-lines>
-    <form class="container" (ngSubmit)="submit()">
-      <ion-item class="imgConsultorio">
+    <ion-item class="item-image">
+      <img src="assets/imgs/dentist.png" />
+      <p>My name consultorio</p>
+    </ion-item>
+    <form class="myform" (ngSubmit)="submit()">
+      <!--ion-item class="imgConsultorio">
         <p>
           <ion-icon name="happy"></ion-icon>
         </p>
         <p>Nuuktal technology</p>
-      </ion-item>
-      <ion-item style="margin-top: 35px;">
-        <ion-input #email="ngModel" type="email" placeholder="Correo electronico" [(ngModel)]="login.email" name="email" clearInput required></ion-input>
+      </ion-item-->
+      <ion-item>
+        <ion-label floating>Correo electronico</ion-label>
+        <ion-input #email="ngModel" type="email" [(ngModel)]="login.email" name="email" clearInput required></ion-input>
       </ion-item>
       <ion-item>
-        <ion-input #password="ngModel" type="password" placeholder="Contraseña" [(ngModel)]="login.password" name="password" clearInput required></ion-input>
+        <ion-label floating>Contraseña</ion-label>
+        <ion-input #password="ngModel" type="password" [(ngModel)]="login.password" name="password" clearInput required></ion-input>
       </ion-item>
-      <button ion-button type="submit" [disabled]="!email.valid||!password.valid" block>Entrar</button>
+      <ion-item>
+        <button ion-button type="submit" [disabled]="!email.valid||!password.valid" block>Entrar</button>
+      </ion-item>
     </form>
+        <ion-item>
+          <button ion-button clear style="width: 100%; margin-top: 0;" (click)="forgotPass()">
+            Olvidé mi contraseña
+          </button>
+        </ion-item>
   </ion-list>
 </ion-content>
