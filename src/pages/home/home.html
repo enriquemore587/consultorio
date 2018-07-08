@@ -6,42 +6,48 @@
 
 <ion-content padding>
   <ion-list>
-    <ion-item-sliding *ngFor='let item of myList'>
+    <ion-item right>
+      <ion-label>Mostrar citas importantes</ion-label>
+      <ion-toggle color="primary" checked="false"></ion-toggle>
+    </ion-item>
+    <ion-item-sliding *ngFor='let item of _HomeServiceProvider.nextMeetingList'>
       <ion-item>
-        <ion-icon name='md-star' item-end color="favorite"></ion-icon>
+        pokenmon {{item.isImportant}}
+        <ion-icon name='md-star' item-end color="primary" [hidden]='item.isImportant'></ion-icon>
+        <ion-icon name='md-star' item-end color="bg" [hidden]='!item.isImportant'></ion-icon>
         <ion-avatar item-start>
-          <ion-icon name="people"></ion-icon>
+            <img src="assets/imgs/profile.jpg" />
         </ion-avatar>
-        <h2>Jose Enrique Vergara Ambriz</h2>
-        <h3>Sabado 21 de Julio, 2018 03:00pm</h3>
-        <p>$1,500 MX</p>
+        <h2>{{item.patientName}}</h2>
+        <h3>{{item.dateMeeting}}, {{item.hour}}</h3>
+        <p>{{item.amount }}</p>
       </ion-item>
       <ion-item-options side="right">
-        <button ion-button color="primary">
-          <ion-icon name="md-checkbox-outline"></ion-icon>
+        <button class="btn-sls" ion-button color="primary">
+          <ion-icon name="md-checkbox-outline"></ion-icon>Realizar
         </button>
-        <button ion-button color="secondary">
-          <ion-icon name="md-clipboard"></ion-icon>
+        <button class="btn-sls" ion-button color="secondary">
+          <ion-icon name="md-clipboard"></ion-icon>Modificar
         </button>
-        <button ion-button color="danger">
-          <ion-icon name="trash"></ion-icon>
+        <button class="btn-sls" ion-button color="danger">
+          <ion-icon name="trash"></ion-icon>Eliminar
         </button>
       </ion-item-options>
     </ion-item-sliding>
   </ion-list>
   <ion-fab right bottom>
-    <button ion-fab color="light">
+    <button class="ion-fab-home" ion-fab color="bg">
       <ion-icon name="md-add"></ion-icon>
     </button>
     <ion-fab-list side="left">
-      <button ion-fab>
+      <button class="ion-fab-home" ion-fab color="bg">
         <ion-icon name="logo-usd"></ion-icon>
       </button>
-      <button ion-fab>
+      <button class="ion-fab-home" ion-fab color="bg">
         <ion-icon name="md-checkbox-outline"></ion-icon>
       </button>
-      <button ion-fab>
-        <ion-icon name="md-contact"></ion-icon>
+      <button class="ion-fab-home" ion-fab color="bg">
+        <ion-icon name="md-person-add"></ion-icon>
       </button>
     </ion-fab-list>
   </ion-fab>

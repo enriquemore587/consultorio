@@ -2,4 +2,10 @@ page-home {
     .item-wrapper{
         box-shadow: 0px 1px 1px -1px rgba(0,0,0,0.5);
     }
+    .btn-sls{
+        font-size: 9px;
+    }
+    .ion-fab-home{
+        color: color($colors, primary);
+    }
 }
