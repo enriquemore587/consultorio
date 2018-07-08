@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, ModalController } from 'ionic-angular';
 import { HomeServiceProvider } from '../../providers/home-service/home-service';
 
+import { AddPatientPage } from '../add-patient/add-patient';
+import { ConfirmPatientPage } from '../confirm-patient/confirm-patient';
 
 @Component({
   selector: 'page-home',
@@ -9,12 +11,28 @@ import { HomeServiceProvider } from '../../providers/home-service/home-service';
   providers: [HomeServiceProvider]
 })
 export class HomePage {
-  public myList = [1,1,1,1,1,1,1,1];
+  public showAll = false;
   constructor(
-    public navCtrl: NavController
-    , public _HomeServiceProvider : HomeServiceProvider
+    public navCtrl: NavController,
+    public modalCtrl: ModalController,
+    public _HomeServiceProvider: HomeServiceProvider
   ) {
-    
+
+  }
+
+  public changeShowing() {
+    this.showAll = !this.showAll;
+  }
+
+  public addPatient() {
+    const modal = this.modalCtrl.create(AddPatientPage);
+    modal.present();
+    modal.onDidDismiss(data => {
+      if (data) {
+        const modalConfirmation = this.modalCtrl.create(ConfirmPatientPage);
+        modalConfirmation.present();
+      }
+    });
   }
 
 }
