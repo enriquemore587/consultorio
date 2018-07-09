@@ -10,7 +10,7 @@
       <ion-title>Usuario agregado</ion-title>
       <ion-buttons start>
         <button ion-button (click)="dismiss()">
-          <span color="secondary">Cancel</span>
+          <span color="secondary">Regresar</span>
         </button>
       </ion-buttons>
     </ion-toolbar>
@@ -22,16 +22,16 @@
   <ion-list>
     <ion-item>
       <ion-item class="item-image">
-        <img src="assets/imgs/checked.png" style='width:100%;' />
+        <img src="assets/imgs/checked.png" />
       </ion-item>
-      <ion-item>
+      <ion-item style="margin-top: 5px;">
         <h2 style="color: green">El usuario Enrique ha sido agregado</h2>
       </ion-item>
       <ion-item>
-        <button ion-button type="submit" color='bg' style="color: #2196f3;" block>Editar datos del paciente</button>
+        <button class="opc-btn" ion-button type="submit" color='bg' style="color: #2196f3;" block>Editar datos del paciente</button>
       </ion-item>
       <ion-item>
-        <button ion-button type="submit" color='bg' style="color: #2196f3;" block>Agendar cita</button>
+        <button class="opc-btn" ion-button type="submit" color='bg' style="color: #2196f3;" block>Agendar cita</button>
       </ion-item>
     </ion-item>
   </ion-list>

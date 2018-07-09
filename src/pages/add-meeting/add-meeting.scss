@@ -1,0 +1,12 @@
+page-add-meeting {
+    .item-image{
+        margin-top: 15vh;
+        display: flex;
+        align-content: center;
+        flex-direction: column;
+    }
+    ion-item{
+        width: 100% !important;
+        height: 100% !important;
+    }
+}

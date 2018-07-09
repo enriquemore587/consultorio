@@ -4,18 +4,22 @@ import { HomeServiceProvider } from '../../providers/home-service/home-service';
 
 import { AddPatientPage } from '../add-patient/add-patient';
 import { ConfirmPatientPage } from '../confirm-patient/confirm-patient';
+import { AddMeetingPage } from '../add-meeting/add-meeting';
+
+import { CallNumber } from '@ionic-native/call-number';
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html',
-  providers: [HomeServiceProvider]
+  providers: [HomeServiceProvider, CallNumber]
 })
 export class HomePage {
   public showAll = false;
   constructor(
     public navCtrl: NavController,
     public modalCtrl: ModalController,
-    public _HomeServiceProvider: HomeServiceProvider
+    public _HomeServiceProvider: HomeServiceProvider,
+    private callNumber: CallNumber
   ) {
 
   }
@@ -33,6 +37,26 @@ export class HomePage {
         modalConfirmation.present();
       }
     });
+  }
+
+  public addMeeting() {
+    this.navCtrl.push(AddMeetingPage);
+    /*
+    const modal = this.modalCtrl.create(AddMeetingPage);
+    modal.present();
+    modal.onDidDismiss(data => {
+      if (data) {
+        const modalConfirmation = this.modalCtrl.create(ConfirmPatientPage);
+        modalConfirmation.present();
+      }
+    });
+    */
+  }
+
+  public call(){
+    this.callNumber.callNumber("5575983238", true)
+    .then(res => console.log('Launched dialer!', res))
+    .catch(err => console.log('Error launching dialer', err));
   }
 
 }

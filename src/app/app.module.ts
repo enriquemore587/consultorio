@@ -16,7 +16,11 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { HomeServiceProvider } from '../providers/home-service/home-service';
 import { AddPatientProvider } from '../providers/add-patient/add-patient';
 import { ConfirmPatientPage } from '../pages/confirm-patient/confirm-patient';
+import { AddMeetingPage } from '../pages/add-meeting/add-meeting';
+import { SelectAUserPage } from '../pages/select-a-user/select-a-user';
+import { SelectAUserProvider } from '../providers/select-a-user/select-a-user';
 
+import { CallNumber } from '@ionic-native/call-number';
 @NgModule({
   declarations: [
     MyApp,
@@ -27,7 +31,9 @@ import { ConfirmPatientPage } from '../pages/confirm-patient/confirm-patient';
     LoginPage,
     AddPatientPage,
     AddPyamentPage,
-    ConfirmPatientPage
+    ConfirmPatientPage,
+    AddMeetingPage,
+    SelectAUserPage
   ],
   imports: [
     BrowserModule,
@@ -44,14 +50,18 @@ import { ConfirmPatientPage } from '../pages/confirm-patient/confirm-patient';
     LoginPage,
     AddPatientPage,
     AddPyamentPage,
-    ConfirmPatientPage
+    ConfirmPatientPage,
+    AddMeetingPage,
+    SelectAUserPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     HomeServiceProvider,
-    AddPatientProvider
+    AddPatientProvider,
+    SelectAUserProvider,
+    CallNumber
   ]
 })
 export class AppModule {}

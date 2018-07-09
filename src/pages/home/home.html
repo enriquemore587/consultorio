@@ -12,7 +12,6 @@
     </ion-item>
     <ion-item-sliding *ngFor='let item of _HomeServiceProvider.nextMeetingList' [hidden]='showAll && !item.isImportant'>
       <ion-item>
-        pokenmon {{item.isImportant}}
         <ion-icon name='md-star' item-end color="primary" [hidden]='!item.isImportant'></ion-icon>
         <ion-icon name='md-star' item-end color="bg" [hidden]='item.isImportant'></ion-icon>
         <ion-avatar item-start>
@@ -40,10 +39,10 @@
       <ion-icon name="md-add"></ion-icon>
     </button>
     <ion-fab-list side="left">
-      <button class="ion-fab-home" ion-fab color="bg">
+      <button class="ion-fab-home" ion-fab color="bg" (click)='call()'>
         <ion-icon name="logo-usd"></ion-icon>
       </button>
-      <button class="ion-fab-home" ion-fab color="bg">
+      <button class="ion-fab-home" ion-fab color="bg" (click)='addMeeting()'>
         <ion-icon name="md-checkbox-outline"></ion-icon>
       </button>
       <button class="ion-fab-home" ion-fab color="bg" (click)='addPatient()'>
