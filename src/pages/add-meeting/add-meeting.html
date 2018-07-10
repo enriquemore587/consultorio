@@ -14,51 +14,87 @@
 
 
 <ion-content padding>
-  <ion-list>
-    <ion-item [hidden]="id" no-lines class="item-image">
+  <ion-list no-lines>
+    <ion-item [hidden]="userToSelect.id!=0" no-lines class="item-image">
       <ion-icon name="ios-person" color="bg" style="font-size: 250px;"></ion-icon>
     </ion-item>
-    <ion-item [hidden]="id" style="margin-top: 0px;">
+    <ion-item [hidden]="userToSelect.id!=0" style="margin-top: 0px;">
       <button ion-button clear style="width: 100%; margin-top: 0; font-style: oblique" (click)="SelectPatient()">
         Selecciona un paciente
       </button>
     </ion-item>
-    <form [hidden]="!id" class="dataBasic" (ngSubmit)="submit()">
+    <form [hidden]="userToSelect.id==0" class="dataBasic" (ngSubmit)="submit()">
       <ion-item>
-        <ion-label floating>* Nombre (s)</ion-label>
-        <ion-input #nombre="ngModel" [(ngModel)]="patient.nombre" name='nombre' type="text" required></ion-input>
+        {{userToSelect.name}}
+        <button ion-button color='favorite' outline item-end icon-start (click)="call()">
+          <ion-icon name="call"></ion-icon>
+          Llamar
+        </button>
+      </ion-item>
+      <ion-item class="nota-importante">
+        {{userToSelect.notaImportante}}
+      </ion-item>
+      <ion-item>
+        <ion-label>Cita importante</ion-label>
+        <ion-checkbox color="favorite" checked="true"></ion-checkbox>
+      </ion-item>
+      <ion-item class="label-detalle">
+        Detalles de la cita
       </ion-item>
 
       <ion-item>
-        <ion-label floating>* Apellido paterno</ion-label>
-        <ion-input [(ngModel)]="patient.paterno" name='paterno' type="text" required></ion-input>
+        <ion-label style="font-size: 0.7em">Fecha</ion-label>
+        <ion-select [(ngModel)]="year" name='year' placeholder="Año" required>
+          <ion-option *ngFor='let year of _AddMeetingProvider.yearList'>{{year}}</ion-option>
+        </ion-select>
+        <ion-select [(ngModel)]="month" name='month' placeholder="Mes" required>
+          <ion-option *ngFor='let month of _AddMeetingProvider.monthList' [value]='month.value'>{{month.description}}</ion-option>
+        </ion-select>
+        <ion-select [(ngModel)]="day" name='day' placeholder="Día" required>
+          <ion-option *ngFor='let day of _AddMeetingProvider.dayList'>{{day}}</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>Hora inicio</ion-label>
+        <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="event.timeStarts" [ngModelOptions]="{standalone: true}"></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-label>Hora fin</ion-label>
+        <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="event.timeEnd" [ngModelOptions]="{standalone: true}"></ion-datetime>
       </ion-item>
 
       <ion-item>
-        <ion-label floating>* Apellido materno</ion-label>
-        <ion-input [(ngModel)]="patient.materno" name='materno' type="text" required></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label floating>* Teléfono</ion-label>
-        <ion-input [(ngModel)]="patient.phoneNumber" name='phoneNumber' type="number" required></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label>Estado civil</ion-label>
-        <ion-select [(ngModel)]="patient.civilStatus" name='civilStatus' required>
-          <ion-option value="Soltero">Soltero</ion-option>
-          <ion-option value="Casado">Casado</ion-option>
-          <ion-option value="Divorciado">Divorciado</ion-option>
+        <ion-label style="font-size: 0.7em">Tipo de cita</ion-label>
+        <ion-select [(ngModel)]="year" name='year' placeholder="Seleccionar una" required>
+          <ion-option *ngFor='let tipo of _AddMeetingProvider.tipoCitaList'>{{tipo}}</ion-option>
         </ion-select>
       </ion-item>
 
       <ion-item>
-        <ion-label floating>Nota importante</ion-label>
-        <ion-textarea [(ngModel)]="patient.notaImportante" name='notaImportante' rows="3" autosize required></ion-textarea>
+        <ion-label style="font-size: 0.7em">Categoría</ion-label>
+        <ion-select [(ngModel)]="year" name='year' placeholder="Seleccionar una" required>
+          <ion-option *ngFor='let categoria of _AddMeetingProvider.categoriaList'>{{categoria}}</ion-option>
+        </ion-select>
       </ion-item>
+
       <ion-item>
-        <button ion-button clear style="width: 100%; margin-top: 0;">
-          {{btnAddressTitle}}
-        </button>
+        <ion-label floating>Costo</ion-label>
+        <ion-input name='costo' type="number" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Costo extra</ion-label>
+        <ion-input name='costo_extra' type="number" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Anticipo</ion-label>
+        <ion-input name='anticipo' type="number" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Comentarios</ion-label>
+        <ion-textarea name='comentarios' rows="3" autosize required></ion-textarea>
       </ion-item>
       <ion-item>
         <button ion-button type="submit" block>{{btnTitle}}</button>

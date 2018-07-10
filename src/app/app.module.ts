@@ -21,6 +21,7 @@ import { SelectAUserPage } from '../pages/select-a-user/select-a-user';
 import { SelectAUserProvider } from '../providers/select-a-user/select-a-user';
 
 import { CallNumber } from '@ionic-native/call-number';
+import { AddMeetingProvider } from '../providers/add-meeting/add-meeting';
 @NgModule({
   declarations: [
     MyApp,
@@ -61,7 +62,8 @@ import { CallNumber } from '@ionic-native/call-number';
     HomeServiceProvider,
     AddPatientProvider,
     SelectAUserProvider,
-    CallNumber
+    CallNumber,
+    AddMeetingProvider
   ]
 })
 export class AppModule {}

@@ -32,8 +32,8 @@ export class SelectAUserPage {
     this.viewController.dismiss();
   }
 
-  public userSelected( id : any ){
-    this.viewController.dismiss(id);
+  public userSelected( user : any ){
+    this.viewController.dismiss(user);
   }
 
 }

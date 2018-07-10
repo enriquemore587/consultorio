@@ -9,4 +9,10 @@ page-add-meeting {
         width: 100% !important;
         height: 100% !important;
     }
+    .nota-importante{
+        text-align: center; font-size: 0.7em; color: red;
+    }
+    .label-detalle{
+        text-align: center; font-size: 1.5em; font-weight: bold;
+    }
 }
