@@ -8,6 +8,7 @@ import { AddMeetingPage } from '../add-meeting/add-meeting';
 
 import { CallNumber } from '@ionic-native/call-number';
 import { RegistryMeetingPage } from '../registry-meeting/registry-meeting';
+import { AddFastPaymentPage } from '../add-fast-payment/add-fast-payment';
 
 @Component({
   selector: 'page-home',
@@ -38,6 +39,10 @@ export class HomePage {
         modalConfirmation.present();
       }
     });
+  }
+
+  public addPayment() {
+    this.navCtrl.push(AddFastPaymentPage);
   }
 
   public addMeeting() {

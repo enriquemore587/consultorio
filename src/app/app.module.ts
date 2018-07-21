@@ -27,6 +27,7 @@ import { PaymentsHomePage } from '../pages/payments-home/payments-home';
 import { PatientsHomePage } from '../pages/patients-home/patients-home';
 import { MeetingsHomePage } from '../pages/meetings-home/meetings-home';
 import { ProfileHomePage } from '../pages/profile-home/profile-home';
+import { AddFastPaymentPage } from '../pages/add-fast-payment/add-fast-payment';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { ProfileHomePage } from '../pages/profile-home/profile-home';
     PaymentsHomePage,
     PatientsHomePage,
     MeetingsHomePage,
-    ProfileHomePage
+    ProfileHomePage,
+    AddFastPaymentPage
   ],
   imports: [
     BrowserModule,
@@ -65,7 +67,8 @@ import { ProfileHomePage } from '../pages/profile-home/profile-home';
     PaymentsHomePage,
     PatientsHomePage,
     MeetingsHomePage,
-    ProfileHomePage
+    ProfileHomePage,
+    AddFastPaymentPage
   ],
   providers: [
     StatusBar,

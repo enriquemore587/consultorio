@@ -1,6 +1,6 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+    <ion-title>Próximas citas</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -13,7 +13,7 @@
     <ion-item-sliding *ngFor='let item of _HomeServiceProvider.nextMeetingList; let i = index;' [hidden]='showAll && !item.isImportant'>
       <ion-item>
         <ion-icon name='md-star' item-end color="primary" [hidden]='!item.isImportant'></ion-icon>
-        <ion-icon name='md-star' item-end color="bg" [hidden]='item.isImportant'></ion-icon>
+        <ion-icon name='md-star' item-end color="light" [hidden]='item.isImportant'></ion-icon>
         <ion-avatar item-start>
           <img [hidden]='i%2!=0' src="assets/imgs/profileMan.jpg" />
           <img [hidden]='i%2==0' src="assets/imgs/profileGirl.jpg" />
@@ -40,7 +40,7 @@
       <ion-icon name="md-add"></ion-icon>
     </button>
     <ion-fab-list side="left">
-      <button class="ion-fab-home" ion-fab color="bg" (click)='call()'>
+      <button class="ion-fab-home" ion-fab color="bg" (click)='addPayment()'>
         <ion-icon name="logo-usd"></ion-icon>
       </button>
       <button class="ion-fab-home" ion-fab color="bg" (click)='addMeeting()'>

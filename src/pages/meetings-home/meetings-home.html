@@ -1,18 +1,118 @@
-<!--
-  Generated template for the MeetingsHomePage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>meetingsHome</ion-title>
+  <ion-navbar no-border-bottom>
+    <ion-title>
+      Citas
+    </ion-title>
   </ion-navbar>
 
+  <ion-toolbar no-border-top>
+    <ion-segment [(ngModel)]="type">
+      <ion-segment-button value="IMPORTANTES">
+        IMPORTANTES
+      </ion-segment-button>
+      <ion-segment-button value="PASADAS">
+        PASADAS
+      </ion-segment-button>
+      <ion-segment-button value="ELIMINADAS">
+        ELIMINADAS
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
 </ion-header>
 
+<ion-content>
+  <div [ngSwitch]="type">
+    <ion-list *ngSwitchCase="'IMPORTANTES'">
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="assets/imgs/profileMan.jpg">
+        </ion-thumbnail>
+        <h2>Ruby</h2>
+        <h3>Sábado, 11 de Enero 2018. 13:00 Hrs.</h3>
+      </ion-item>
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="assets/imgs/profileGirl.jpg">
+        </ion-thumbnail>
+        <h2>Oscar</h2>
+        <h3>Sábado, 11 de Enero 2018. 13:00 Hrs.</h3>
+      </ion-item>
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="assets/imgs/profileGirl.jpg">
+        </ion-thumbnail>
+        <h2>Zoey</h2>
+        <h3>Sábado, 11 de Enero 2018. 13:00 Hrs.</h3>
+      </ion-item>
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="assets/imgs/profileMan.jpg">
+        </ion-thumbnail>
+        <h2>Otto</h2>
+        <h3>Sábado, 11 de Enero 2018. 13:00 Hrs.</h3>
+      </ion-item>
+    </ion-list>
 
-<ion-content padding>
+    <ion-list *ngSwitchCase="'PASADAS'">
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="assets/imgs/profileGirl.jpg">
+        </ion-thumbnail>
+        <h2>Luna</h2>
+        <h3>Sábado, 11 de Enero 2018. 13:00 Hrs.</h3>
+      </ion-item>
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="assets/imgs/profileMan.jpg">
+        </ion-thumbnail>
+        <h2>Milo</h2>
+        <h3>Sábado, 11 de Enero 2018. 13:00 Hrs.</h3>
+      </ion-item>
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="assets/imgs/profileGirl.jpg">
+        </ion-thumbnail>
+        <h2>Bandit</h2>
+        <h3>Sábado, 11 de Enero 2018. 13:00 Hrs.</h3>
+      </ion-item>
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="assets/imgs/profileMan.jpg">
+        </ion-thumbnail>
+        <h2>Nala</h2>
+        <h3>Sábado, 11 de Enero 2018. 13:00 Hrs.</h3>
+      </ion-item>
+    </ion-list>
 
+    <ion-list *ngSwitchCase="'ELIMINADAS'">
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="assets/imgs/profileMan.jpg">
+        </ion-thumbnail>
+        <h2>Daffy</h2>
+        <h3>Sábado, 11 de Enero 2018. 13:00 Hrs.</h3>
+      </ion-item>
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="assets/imgs/profileMan.jpg">
+        </ion-thumbnail>
+        <h2>Huey</h2>
+        <h3>Sábado, 11 de Enero 2018. 13:00 Hrs.</h3>
+      </ion-item>
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="assets/imgs/profileGirl.jpg">
+        </ion-thumbnail>
+        <h2>Dewey</h2>
+        <h3>Sábado, 11 de Enero 2018. 13:00 Hrs.</h3>
+      </ion-item>
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="assets/imgs/profileGirl.jpg">
+        </ion-thumbnail>
+        <h2>Louie</h2>
+        <h3>Sábado, 11 de Enero 2018. 13:00 Hrs.</h3>
+      </ion-item>
+    </ion-list>
+  </div>
 </ion-content>

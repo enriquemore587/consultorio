@@ -7,12 +7,26 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>paymentsHome</ion-title>
+    <ion-title>PAGOS</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-
+  <ion-list no-lines>
+    <ion-item class="money-item">
+      <h1 class="item-ganancia">{{ganancia | currency}} MXN</h1>
+      <h6 class="item-date-begin">Fecha inscripción: 18 de Diciembre, 2018</h6>
+    </ion-item>
+    <ion-item class="btns-history">
+      <button class="btns" ion-button large>Historial de pagos</button>
+    </ion-item>
+    <ion-item>
+      <button class="btns" ion-button large style="width: 100%;">Próximos cobrar</button>
+    </ion-item>
+    <ion-item>
+      <button class="retrazos" ion-button large style="width: 100%;">Pagos retrasados</button>
+    </ion-item>
+  </ion-list>
 </ion-content>

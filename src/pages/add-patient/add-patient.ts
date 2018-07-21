@@ -32,7 +32,7 @@ export class AddPatientPage {
     public viewController: ViewController,
     public _AddPatientProvider: AddPatientProvider
   ) {
-    this.patient = new PatientToAdd(0, '', '', '', '', '', '', '', 'Sin alergias');
+    this.patient = new PatientToAdd(0, '', '', '', '', '', '', '', 'Paciente sano');
   }
 
   ionViewDidLoad() {

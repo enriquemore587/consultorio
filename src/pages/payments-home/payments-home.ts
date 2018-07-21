@@ -14,6 +14,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'payments-home.html',
 })
 export class PaymentsHomePage {
+  public ganancia : number = 25000.86;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }

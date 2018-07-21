@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Platform } from 'ionic-angular';
 
 /**
  * Generated class for the MeetingsHomePage page.
@@ -14,8 +14,12 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'meetings-home.html',
 })
 export class MeetingsHomePage {
+  
+  public type: string = "IMPORTANTES";
+  public isAndroid: boolean = false;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,platform: Platform) {
+    this.isAndroid = platform.is('android');
   }
 
   ionViewDidLoad() {

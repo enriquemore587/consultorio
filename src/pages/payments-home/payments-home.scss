@@ -1,3 +1,33 @@
 page-payments-home {
+    ion-list{
+        ion-item.money-item{
+            margin-top: 50px !important;
+        }
+        button.btns{
+            width: 100% !important;
+            background-color : color($colors, bg) !important;
+            color : color($colors, primary) !important;
+        }
+        button.retrazos{
+            width: 100% !important;
+            background-color : color($colors, bg) !important;
+            color : color($colors, danger) !important;
+        }
+        ion-item.btns-history{
+            margin-top: 150px !important;
+        }
+        ion-item{
+            h1.item-ganancia{
+                text-align: center;
+                font-size: 2.5em;
+                color: color($colors, favorite);
+            }
+            h6.item-date-begin{
+                text-align: center;
+                color: #878787;
+            }
+
+        }
+    }
 
 }
