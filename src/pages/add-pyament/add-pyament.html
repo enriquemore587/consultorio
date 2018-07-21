@@ -14,5 +14,28 @@
 
 
 <ion-content padding>
+  <ion-list no-lines>
+    <ion-item>
+      {{this._AddPymentProvider.nextMeetingToEdit.patientName}}
+      <button ion-button color='favorite' outline item-end icon-start (click)="call()">
+        <ion-icon name="call"></ion-icon>
+        Llamar
+      </button>
+    </ion-item>
+    <ion-item class="green-money">
+      <label>{{this._AddPymentProvider.nextMeetingToEdit.amount | currency}} MXN</label>
+    </ion-item>
+    <ion-item>
+      <ion-label>Deuda total</ion-label>
+      <ion-checkbox color="dark" [checked]=paymentComplete [(ngModel)]='paymentComplete'></ion-checkbox>
+      <ion-label item-end>{{_AddPymentProvider.paymentQuantity | currency}}</ion-label>
+    </ion-item>
+    <ion-item *ngIf='!paymentComplete'>
+      <ion-label floating>Price Quotation (MXN)*</ion-label>
+      <ion-input type="number"></ion-input>
+    </ion-item>
+    <ion-item>
 
+    </ion-item>
+  </ion-list>
 </ion-content>

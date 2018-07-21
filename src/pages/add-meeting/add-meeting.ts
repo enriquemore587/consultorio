@@ -26,8 +26,7 @@ export class AddMeetingPage {
   month; year; day;
   public btnTitle : string = 'Agregar cita';
   public event = {
-    timeStarts: '07:43',
-    timeEnd: '07:43'
+    timeStarts: '07:43'
   }
 
   constructor(

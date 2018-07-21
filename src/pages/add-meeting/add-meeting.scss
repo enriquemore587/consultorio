@@ -1,14 +1,48 @@
 page-add-meeting {
+    
+    ion-item{
+        margin-top: 25px !important;
+        border: 0.5px solid #e2e6ea !important;
+        border-radius: 12px !important;
+    }
+    /*BEGIN - REMOVING CLASS*/
+    .item-md.item-input-has-focus .item-inner, .item-md.item-input.input-has-focus .item-inner{
+        border-bottom-color: transparent;
+        -webkit-box-shadow: inset 0 -1px 0 0 transparent;
+        box-shadow: inset 0 -1px 0 0 transparent;
+        // border: 0.5px solid #2196f3;
+        // border-radius: 12px;
+    }
+    .item-md.item-input.ng-invalid.ng-touched:not(.input-has-focus):not(.item-input-has-focus) .item-inner {
+        border-bottom-color: transparent;
+        -webkit-box-shadow: inset 0 -1px 0 0 transparent;
+        box-shadow: inset 0 -1px 0 0 transparent;
+        // border: 0.5px solid #f53d3d !important;
+        //  border-radius: 12px !important;
+    }
+    .item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner, .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner {
+        border-bottom-color: transparent;
+        -webkit-box-shadow: inset 0 -1px 0 0 transparent;
+        box-shadow: inset 0 -1px 0 0 transparent;
+        // border: 0.5px solid #32db64 !important;
+        //  border-radius: 12px !important;
+    }
+    /*END - REMOVING CLASS*/
+
+
     .item-image{
-        margin-top: 15vh;
+        margin-top: 20vh !important;
         display: flex;
         align-content: center;
         flex-direction: column;
+        border: none !important;
     }
-    ion-item{
-        width: 100% !important;
-        height: 100% !important;
+
+    .item-check{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
     }
+    
     .nota-importante{
         text-align: center; font-size: 0.7em; color: red;
     }

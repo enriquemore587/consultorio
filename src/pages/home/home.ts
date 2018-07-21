@@ -7,6 +7,7 @@ import { ConfirmPatientPage } from '../confirm-patient/confirm-patient';
 import { AddMeetingPage } from '../add-meeting/add-meeting';
 
 import { CallNumber } from '@ionic-native/call-number';
+import { RegistryMeetingPage } from '../registry-meeting/registry-meeting';
 
 @Component({
   selector: 'page-home',
@@ -53,10 +54,14 @@ export class HomePage {
     */
   }
 
-  public call(){
+  public call() {
     this.callNumber.callNumber("5575983238", true)
-    .then(res => console.log('Launched dialer!', res))
-    .catch(err => console.log('Error launching dialer', err));
+      .then(res => console.log('Launched dialer!', res))
+      .catch(err => console.log('Error launching dialer', err));
+  }
+
+  public registerMeeting(index: number) {
+    this.navCtrl.push(RegistryMeetingPage, { nextMeetingToEdit: this._HomeServiceProvider.nextMeetingList[index] });
   }
 
 }

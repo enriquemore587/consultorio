@@ -4,8 +4,6 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 
-import { AboutPage } from '../pages/about/about';
-import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { LoginPage } from '../pages/login/login';
@@ -22,19 +20,30 @@ import { SelectAUserProvider } from '../providers/select-a-user/select-a-user';
 
 import { CallNumber } from '@ionic-native/call-number';
 import { AddMeetingProvider } from '../providers/add-meeting/add-meeting';
+import { RegistryMeetingPage } from '../pages/registry-meeting/registry-meeting';
+import { RegistryMeetingProvider } from '../providers/registry-meeting/registry-meeting';
+import { AddPymentProvider } from '../providers/add-pyment/add-pyment';
+import { PaymentsHomePage } from '../pages/payments-home/payments-home';
+import { PatientsHomePage } from '../pages/patients-home/patients-home';
+import { MeetingsHomePage } from '../pages/meetings-home/meetings-home';
+import { ProfileHomePage } from '../pages/profile-home/profile-home';
+
 @NgModule({
   declarations: [
     MyApp,
-    AboutPage,
-    ContactPage,
     HomePage,
     TabsPage,
     LoginPage,
     AddPatientPage,
-    AddPyamentPage,
     ConfirmPatientPage,
     AddMeetingPage,
-    SelectAUserPage
+    SelectAUserPage,
+    RegistryMeetingPage,
+    AddPyamentPage,
+    PaymentsHomePage,
+    PatientsHomePage,
+    MeetingsHomePage,
+    ProfileHomePage
   ],
   imports: [
     BrowserModule,
@@ -44,8 +53,6 @@ import { AddMeetingProvider } from '../providers/add-meeting/add-meeting';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    AboutPage,
-    ContactPage,
     HomePage,
     TabsPage,
     LoginPage,
@@ -53,7 +60,12 @@ import { AddMeetingProvider } from '../providers/add-meeting/add-meeting';
     AddPyamentPage,
     ConfirmPatientPage,
     AddMeetingPage,
-    SelectAUserPage
+    SelectAUserPage,
+    RegistryMeetingPage,
+    PaymentsHomePage,
+    PatientsHomePage,
+    MeetingsHomePage,
+    ProfileHomePage
   ],
   providers: [
     StatusBar,
@@ -63,7 +75,9 @@ import { AddMeetingProvider } from '../providers/add-meeting/add-meeting';
     AddPatientProvider,
     SelectAUserProvider,
     CallNumber,
-    AddMeetingProvider
+    AddMeetingProvider,
+    RegistryMeetingProvider,
+    AddPymentProvider
   ]
 })
 export class AppModule {}

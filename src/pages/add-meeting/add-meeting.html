@@ -1,9 +1,3 @@
-<!--
-  Generated template for the AddMeetingPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
   <ion-navbar>
@@ -18,7 +12,7 @@
     <ion-item [hidden]="userToSelect.id!=0" no-lines class="item-image">
       <ion-icon name="ios-person" color="bg" style="font-size: 250px;"></ion-icon>
     </ion-item>
-    <ion-item [hidden]="userToSelect.id!=0" style="margin-top: 0px;">
+    <ion-item [hidden]="userToSelect.id!=0" style="border: none !important;">
       <button ion-button clear style="width: 100%; margin-top: 0; font-style: oblique" (click)="SelectPatient()">
         Selecciona un paciente
       </button>
@@ -34,7 +28,7 @@
       <ion-item class="nota-importante">
         {{userToSelect.notaImportante}}
       </ion-item>
-      <ion-item>
+      <ion-item class="item-check">
         <ion-label>Cita importante</ion-label>
         <ion-checkbox color="favorite" checked="true"></ion-checkbox>
       </ion-item>
@@ -57,10 +51,6 @@
       <ion-item>
         <ion-label>Hora inicio</ion-label>
         <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="event.timeStarts" [ngModelOptions]="{standalone: true}"></ion-datetime>
-      </ion-item>
-      <ion-item>
-        <ion-label>Hora fin</ion-label>
-        <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="event.timeEnd" [ngModelOptions]="{standalone: true}"></ion-datetime>
       </ion-item>
 
       <ion-item>

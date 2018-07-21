@@ -10,19 +10,20 @@
       <ion-label>Mostrar citas importantes</ion-label>
       <ion-toggle color="primary" [(ngModel)]='showAll' (click)="changeShowing()"></ion-toggle>
     </ion-item>
-    <ion-item-sliding *ngFor='let item of _HomeServiceProvider.nextMeetingList' [hidden]='showAll && !item.isImportant'>
+    <ion-item-sliding *ngFor='let item of _HomeServiceProvider.nextMeetingList; let i = index;' [hidden]='showAll && !item.isImportant'>
       <ion-item>
         <ion-icon name='md-star' item-end color="primary" [hidden]='!item.isImportant'></ion-icon>
         <ion-icon name='md-star' item-end color="bg" [hidden]='item.isImportant'></ion-icon>
         <ion-avatar item-start>
-            <img src="assets/imgs/profile.jpg" />
+          <img [hidden]='i%2!=0' src="assets/imgs/profileMan.jpg" />
+          <img [hidden]='i%2==0' src="assets/imgs/profileGirl.jpg" />
         </ion-avatar>
         <h2>{{item.patientName}}</h2>
         <h3>{{item.dateMeeting}}, {{item.hour}}</h3>
         <p>{{item.amount }}</p>
       </ion-item>
       <ion-item-options side="right">
-        <button class="btn-sls" ion-button color="primary">
+        <button class="btn-sls" ion-button color="primary" (click)="registerMeeting(i)">
           <ion-icon name="md-checkbox-outline"></ion-icon>Realizar
         </button>
         <button class="btn-sls" ion-button color="secondary">

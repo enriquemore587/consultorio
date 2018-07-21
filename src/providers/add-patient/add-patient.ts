@@ -42,7 +42,7 @@ export class AddPatientProvider {
   }
 
   private getYears(){
-    for (let index = 2018; index > 1940; index--) {
+    for (let index = 1948; index < 2018; index++) {
       this.yearList = [...this.yearList, index]
     }
   }
